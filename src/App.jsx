@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import GateCard from "./GateCard";
 
+const BACKEND_URL = "https://dl-backend-0ddd.onrender.com"; // Replace with your backend URL
+
 function App() {
   const [manual, setManual] = useState(null);
   const [torch, setTorch] = useState(null);
   const [trained, setTrained] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/manual").then(res => res.json()).then(setManual);
-    fetch("http://localhost:8000/torch-threshold").then(res => res.json()).then(setTorch);
-    fetch("http://localhost:8000/torch-trained").then(res => res.json()).then(setTrained);
+    fetch(`${BACKEND_URL}/manual`).then(res => res.json()).then(setManual);
+    fetch(`${BACKEND_URL}/torch-threshold`).then(res => res.json()).then(setTorch);
+    fetch(`${BACKEND_URL}/torch-trained`).then(res => res.json()).then(setTrained);
   }, []);
 
   return (
