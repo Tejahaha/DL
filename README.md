@@ -1,6 +1,6 @@
-# DL
+# DeepLearning results
 
-[Live Demo](https://dl-dusky.vercel.app)  
+[Live Demo](https://dl-results.vercel.app)  
 [GitHub Repository](https://github.com/Tejahaha/DL)
 
 ---
