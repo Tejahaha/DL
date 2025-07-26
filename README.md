@@ -1,12 +1,89 @@
-# React + Vite
+# DeepLearning results
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Demo](https://dl-results.vercel.app)  
+[GitHub Repository](https://github.com/Tejahaha/DL)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+**DL** is a JavaScript-based project created and maintained by [Tejahaha](https://github.com/Tejahaha).  
+The repository is public and designed to be easily forked or contributed to by the community.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+- Built using modern JavaScript (ECMAScript 2020+) standards.
+- Browser environment support.
+- React and React Hooks linting integration for high-quality code.
+- Vite development environment compatibility.
+- Strict linting rules for unused variables and best practices.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 16 or later)
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Tejahaha/DL.git
+   cd DL
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Running Locally
+
+> The project may be built with Vite or a similar tool.  
+> Please refer to the project files or `package.json` for specific scripts (not detected in search).
+
+---
+
+## Code Quality
+
+- Uses ESLint with recommended settings for JavaScript, React Hooks, and Vite.
+- Linting is enforced for all `.js` and `.jsx` files.
+- Unused variables are reported as errors, except for those matching capitalized/constant patterns.
+
+---
+
+## Project Structure
+
+- Main source code is in JavaScript.
+- Configuration files include `eslint.config.js`.
+- Uses modern ECMAScript features.
+
+---
+
+## Contribution
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Create a new Pull Request.
+
+---
+
+## License
+
+No license information was detected. Please confirm with the repository owner for usage terms.
+
+---
+
+## Additional Information
+
+- No issues or discussions currently open.
+- For more details, visit the [GitHub repository](https://github.com/Tejahaha/DL).
+- Results are based on available code search and may be incomplete.  
+  [View more results or browse the code](https://github.com/Tejahaha/DL/search?q=).
+
+---
