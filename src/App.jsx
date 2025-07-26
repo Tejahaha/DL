@@ -3,8 +3,8 @@ import HomePage from "./HomePage";
 import Results from "./Results";
 import TestAnd from "./testAnd";
 
-const BACKEND_URL = "https://dl-backend-0ddd.onrender.com"; // Replace with your backend URL
-//const BACKEND_URL = "http://localhost:8000";
+//const BACKEND_URL = "https://dl-backend-0ddd.onrender.com"; // Replace with your backend URL
+const BACKEND_URL = "http://localhost:8000";
 function App() {
   return (
     <div className="min-h-screen bg-white text-black">
