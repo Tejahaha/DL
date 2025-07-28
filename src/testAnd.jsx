@@ -12,15 +12,20 @@ export default function TestAnd({ backendUrl }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch(`${backendUrl}/test-and`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ x1: Number(x1), x2: Number(x2) }),
-      });
-      const data = await response.json();
-      setResult(data.pred);
+      if (backendUrl) {
+        const response = await fetch(`${backendUrl}/test-and`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ x1: Number(x1), x2: Number(x2) }),
+        });
+        const data = await response.json();
+        setResult(data.pred);
+      } else {
+        console.error("Backend URL is not defined.");
+        setResult("Error occurred");
+      }
     } catch (error) {
       console.error("Error predicting AND:", error);
       setResult("Error occurred");
