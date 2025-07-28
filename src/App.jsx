@@ -3,7 +3,7 @@ import HomePage from "./HomePage";
 import Results from "./Results";
 import TestAnd from "./testAnd";
 
-const BACKEND_URL = "https://dl-backend-0ddd.onrender.com"; // Ensure this is the correct backend UR
+const BACKEND_URL = "https://dl-backend-0ddd.onrender.com"; // Ensure this is the correct backend URL
 
 function App() {
   return (
