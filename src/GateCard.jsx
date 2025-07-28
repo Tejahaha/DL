@@ -10,10 +10,39 @@ import {
 } from "recharts";
 
 export default function GateCard({ title, data }) {
+  console.log("GateCard received data:", data); // Debug: Log the data prop
+
   const chartData = data?.outputs?.map((value, index) => ({
     input: `Input ${index}`,
     Output: value,
-  })) || []; // Fallback to an empty array if data or outputs is undefined
+  })) || []; // Fallback to an empty array if outputs is undefined
+
+  const renderDetails = (obj) => {
+    return Object.entries(obj || {}).map(([key, value]) => {
+      if (Array.isArray(value)) {
+        return (
+          <p key={key}>
+            <span className="font-semibold text-gray-600 capitalize">{key}:</span>{" "}
+            {value.join(", ")}
+          </p>
+        );
+      } else if (typeof value === "object" && value !== null) {
+        return (
+          <div key={key} className="space-y-2">
+            <span className="font-semibold text-gray-600 capitalize">{key}:</span>
+            <div className="pl-4">{renderDetails(value)}</div>
+          </div>
+        );
+      } else {
+        return (
+          <p key={key}>
+            <span className="font-semibold text-gray-600 capitalize">{key}:</span>{" "}
+            {value || "N/A"}
+          </p>
+        );
+      }
+    });
+  };
 
   return (
     <div className="border border-black/10 backdrop-blur-md bg-white p-6 rounded-2xl shadow-lg w-full max-w-sm space-y-6 transition-transform hover:scale-105 hover:shadow-2xl duration-300">
@@ -21,34 +50,7 @@ export default function GateCard({ title, data }) {
         {title}
       </h2>
 
-      <div className="space-y-2 text-sm text-black">
-        <p>
-          <span className="font-semibold text-gray-600">Type:</span> {data?.type || "N/A"}
-        </p>
-        <p>
-          <span className="font-semibold text-gray-600">Gate:</span> {data?.gate || "N/A"}
-        </p>
-        <p>
-          <span className="font-semibold text-gray-600">Weights:</span>{" "}
-          {Array.isArray(data?.weights) ? data.weights.join(", ") : data?.weights || "N/A"}
-        </p>
-        {data?.bias && (
-          <p>
-            <span className="font-semibold text-gray-600">Bias:</span>{" "}
-            {data.bias.join(", ")}
-          </p>
-        )}
-        <p>
-          <span className="font-semibold text-gray-600">Threshold:</span>{" "}
-          {data?.threshold || "N/A"}
-        </p>
-        <p>
-          <span className="font-semibold text-gray-600">Accuracy:</span>{" "}
-          <span className="px-2 py-1 rounded bg-black/10 text-black font-bold">
-            {data?.accuracy || "N/A"}
-          </span>
-        </p>
-      </div>
+      <div className="space-y-2 text-sm text-black">{renderDetails(data)}</div>
 
       <div className="rounded-xl bg-black/10 backdrop-blur-sm shadow-inner p-4 hover:bg-black/20 transition-colors duration-300">
         <ResponsiveContainer width="100%" height={200}>
